@@ -34,7 +34,7 @@ def read_space_objects_data_from_file(input_filename):
 
 def parse_star_parameters(line, star):
     """Считывает данные о звезде из строки.
-    Входная строка должна иметь слеюущий формат:
+    Входная строка должна иметь следюущий формат:
     Star <радиус в пикселах> <цвет> <масса> <x> <y> <Vx> <Vy>
 
     Здесь (x, y) — координаты зведы, (Vx, Vy) — скорость.
@@ -54,12 +54,12 @@ def parse_star_parameters(line, star):
     star.y = float(line_internals[5])
     star.Vx = float(line_internals[6])
     star.Vy = float(line_internals[7])
-    star.R = float(line_internals[2])
+    star.R = int(line_internals[2])
 
 def parse_planet_parameters(line, planet):
     """Считывает данные о планете из строки.
     Предполагается такая строка:
-    Входная строка должна иметь слеюущий формат:
+    Входная строка должна иметь следюущий формат:
     Planet <радиус в пикселах> <цвет> <масса> <x> <y> <Vx> <Vy>
 
     Здесь (x, y) — координаты планеты, (Vx, Vy) — скорость.
@@ -80,7 +80,7 @@ def parse_planet_parameters(line, planet):
     planet.y = float(line_internals[5])
     planet.Vx = float(line_internals[6])
     planet.Vy = float(line_internals[7])
-    planet.R = float(line_internals[2])
+    planet.R = int(line_internals[2])
 
 
 def write_space_objects_data_to_file(output_filename, space_objects):
@@ -101,6 +101,5 @@ def write_space_objects_data_to_file(output_filename, space_objects):
 
 # FIXME: хорошо бы ещё сделать функцию, сохраняющую статистику в заданный файл...
 
-print('test')
 if __name__ == "__main__":
     print("This module is not for direct call!")
